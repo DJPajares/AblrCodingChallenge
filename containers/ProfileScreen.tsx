@@ -1,15 +1,15 @@
 import React from 'react';
 import {Text, SafeAreaView, StyleSheet} from 'react-native';
 
-const HomeScreen = () => {
+const ProfileScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Home</Text>
+      <Text>ProfileScreen</Text>
     </SafeAreaView>
   );
 };
 
-export default HomeScreen;
+export default ProfileScreen;
 
 const styles = StyleSheet.create({
   container: {
