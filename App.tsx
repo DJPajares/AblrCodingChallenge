@@ -11,6 +11,7 @@ import TransactionsScreen from './containers/TransactionsScreen';
 import ProfileScreen from './containers/ProfileScreen';
 import NotificationsScreen from './containers/NotificationsScreen';
 import TransactionScreen from './containers/TransactionScreen';
+import {StyleSheet, View} from 'react-native';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -76,12 +77,7 @@ function App(): JSX.Element {
       <Tab.Navigator
         initialRouteName="Home"
         screenOptions={() => ({
-          tabBarStyle: {
-            height: 70,
-            backgroundColor: '#fff',
-            borderTopWidth: 0,
-            elevation: 0,
-          },
+          tabBarStyle: styles.tabBar,
         })}>
         <Tab.Screen
           name="HomeStack"
@@ -116,11 +112,13 @@ function App(): JSX.Element {
             headerShown: false,
             tabBarLabel: '',
             tabBarIcon: ({color, size}) => (
-              <MaterialCommunityIcons
-                name={'line-scan'}
-                color={color}
-                size={size}
-              />
+              <View style={styles.middleButton}>
+                <MaterialCommunityIcons
+                  name={'line-scan'}
+                  color="#ffffff"
+                  size={size}
+                />
+              </View>
             ),
           }}
         />
@@ -152,3 +150,19 @@ function App(): JSX.Element {
 }
 
 export default App;
+
+const styles = StyleSheet.create({
+  tabBar: {
+    height: 90,
+    paddingTop: 10,
+  },
+  middleButton: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+    backgroundColor: '#43a2ea',
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+  },
+});
