@@ -2,15 +2,15 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {StyleSheet} from 'react-native';
 import HomeScreen from './containers/HomeScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import BuyScreen from './containers/BuyScreen';
 import ScanScreen from './containers/ScanScreen';
 import TransactionsScreen from './containers/TransactionsScreen';
 import ProfileScreen from './containers/ProfileScreen';
+import NotificationsScreen from './containers/NotificationsScreen';
+import TransactionScreen from './containers/TransactionScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -21,6 +21,8 @@ function HomeStack() {
       initialRouteName="Home"
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Notifications" component={NotificationsScreen} />
+      <Stack.Screen name="Transaction" component={TransactionScreen} />
     </Stack.Navigator>
   );
 }
@@ -51,6 +53,7 @@ function TransactionsStack() {
       initialRouteName="Transactions"
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="Transactions" component={TransactionsScreen} />
+      <Stack.Screen name="Transaction" component={TransactionScreen} />
     </Stack.Navigator>
   );
 }
@@ -61,6 +64,8 @@ function ProfileStack() {
       initialRouteName="Profile"
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="Notifications" component={NotificationsScreen} />
+      <Stack.Screen name="Transaction" component={TransactionScreen} />
     </Stack.Navigator>
   );
 }
@@ -137,7 +142,7 @@ function App(): JSX.Element {
             headerShown: false,
             tabBarLabel: 'Profile',
             tabBarIcon: ({color, size}) => (
-              <FontAwesome5 name={'user'} color={color} size={size} solid />
+              <Ionicons name={'person'} color={color} size={size} />
             ),
           }}
         />
@@ -145,14 +150,5 @@ function App(): JSX.Element {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  tabView: {
-    flexDirection: 'row',
-  },
-});
 
 export default App;
