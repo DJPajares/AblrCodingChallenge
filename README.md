@@ -46,3 +46,9 @@ To install the app, follow these steps:
 ## App Features
 The app showcases the following features:
 - Navigation to different screens using React Navigation.
+
+## Preview
+
+<video src="https://user-images.githubusercontent.com/91174577/233363198-68bf6738-5635-4fea-8cf2-ae45fb894435.mp4" />
+
+
