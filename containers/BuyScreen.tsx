@@ -5,7 +5,6 @@ const BuyScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.headerText}>Buy screen</Text>
-      <Text style={styles.bodyText}>Purchase items here</Text>
     </SafeAreaView>
   );
 };
@@ -22,11 +21,6 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 22,
     fontWeight: '500',
-    marginVertical: 5,
-  },
-  bodyText: {
-    fontSize: 16,
-    fontWeight: '400',
     marginVertical: 5,
   },
 });
