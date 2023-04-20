@@ -35,7 +35,12 @@ const NotificationsScreen = ({navigation}: Props) => {
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity style={styles.backButton} onPress={handleBack}>
-        <Ionicons name="arrow-back" size={20} color="white" />
+        <Ionicons
+          name="arrow-back"
+          testID="back-button"
+          size={20}
+          color="white"
+        />
       </TouchableOpacity>
 
       <View style={styles.subContainer}>

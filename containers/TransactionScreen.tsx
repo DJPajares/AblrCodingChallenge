@@ -39,7 +39,12 @@ const TransactionScreen = ({navigation, route}: Props) => {
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity style={styles.backButton} onPress={handleBack}>
-        <Ionicons name="arrow-back" size={20} color="white" />
+        <Ionicons
+          testID="back-button"
+          name="arrow-back"
+          size={20}
+          color="white"
+        />
       </TouchableOpacity>
 
       <View style={styles.subContainer}>
