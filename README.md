@@ -1,6 +1,6 @@
 # AblrCodingChallenge
 
-*This is a simple React Native app that showcases navigation to different screens.*
+This is a simple React Native app that showcases navigation to different screens.
 
 ## Prerequisites
 - yarn
@@ -15,8 +15,9 @@ To install the app, follow these steps:
     ```
 2. Navigate to the project directory:
     ```
-    cd project-name
+    cd AblrCodingChallenge
     ```
+    *Note: change the directory name if you modified it*
 3. Install the dependencies:
     ```
     yarn install
@@ -29,8 +30,9 @@ To install the app, follow these steps:
     ```
 2. Open a new terminal window and navigate to the project directory:
     ```
-    cd project-name
+    cd AblrCodingChallenge
     ```
+    *Note: change the directory name if you modified it*
 3. Run the app on an emulator or a physical device:
     ```
     npx react-native run-android
@@ -39,7 +41,7 @@ To install the app, follow these steps:
     ```
     npx react-native run-ios
     ```
-    This will build and run the app on your selected device.
+    *This will build and run the app on your selected device.*
 
 ## App Features
 The app showcases the following features:
