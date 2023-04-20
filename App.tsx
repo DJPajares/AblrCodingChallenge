@@ -103,7 +103,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={BottomTabs} />
+        <Stack.Screen name="BottomTabs" component={BottomTabs} />
         <Stack.Screen name="Notifications" component={NotificationsScreen} />
         <Stack.Screen name="Transaction" component={TransactionScreen} />
       </Stack.Navigator>
