@@ -1,7 +1,21 @@
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {Text, SafeAreaView, StyleSheet, TouchableOpacity} from 'react-native';
 
-const ProfileScreen = ({navigation}) => {
+type RootStackParamList = {
+  Notifications: undefined;
+};
+
+type HomeScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'Notifications'
+>;
+
+type Props = {
+  navigation: HomeScreenNavigationProp;
+};
+
+const ProfileScreen = ({navigation}: Props) => {
   const handleNavigateToNotifications = () => {
     navigation.navigate('Notifications');
   };

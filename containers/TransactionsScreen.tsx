@@ -1,3 +1,4 @@
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {Text, SafeAreaView, StyleSheet, TouchableOpacity} from 'react-native';
 
@@ -7,7 +8,20 @@ const DATA = [
   {id: 'T300', notification_read: false},
 ];
 
-const TransactionsScreen = ({navigation}) => {
+type RootStackParamList = {
+  Transaction: {id: string};
+};
+
+type HomeScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'Transaction'
+>;
+
+type Props = {
+  navigation: HomeScreenNavigationProp;
+};
+
+const TransactionsScreen = ({navigation}: Props) => {
   const handleNavigateTransaction = (id: string) => {
     navigation.navigate('Transaction', {id});
   };

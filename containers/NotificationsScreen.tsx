@@ -1,3 +1,4 @@
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {
   Text,
@@ -14,7 +15,20 @@ const DATA = [
   {id: 'T300', notification_read: false},
 ];
 
-const NotificationsScreen = ({navigation}) => {
+type RootStackParamList = {
+  Transaction: {id: string};
+};
+
+type HomeScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'Transaction'
+>;
+
+type Props = {
+  navigation: HomeScreenNavigationProp;
+};
+
+const NotificationsScreen = ({navigation}: Props) => {
   const handleBack = () => {
     navigation.goBack();
   };
