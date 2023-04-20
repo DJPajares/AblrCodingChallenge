@@ -1,4 +1,4 @@
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {Text, SafeAreaView, StyleSheet, TouchableOpacity} from 'react-native';
 
@@ -12,13 +12,13 @@ type RootStackParamList = {
   Transaction: {id: string};
 };
 
-type HomeScreenNavigationProp = NativeStackNavigationProp<
+type NavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   'Transaction'
 >;
 
 type Props = {
-  navigation: HomeScreenNavigationProp;
+  navigation: NavigationProp;
 };
 
 const TransactionsScreen = ({navigation}: Props) => {
@@ -31,7 +31,9 @@ const TransactionsScreen = ({navigation}: Props) => {
       <Text style={styles.headerText}>Transactions screen</Text>
 
       {DATA.map(item => (
-        <TouchableOpacity onPress={() => handleNavigateTransaction(item.id)}>
+        <TouchableOpacity
+          key={item.id}
+          onPress={() => handleNavigateTransaction(item.id)}>
           <Text style={styles.bodyText}>{`Transaction ${item.id}`}</Text>
         </TouchableOpacity>
       ))}

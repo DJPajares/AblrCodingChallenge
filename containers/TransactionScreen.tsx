@@ -1,3 +1,5 @@
+import type {RouteProp} from '@react-navigation/native';
+import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {
   Text,
@@ -8,10 +10,27 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const TransactionScreen = ({navigation, route}) => {
-  const {id} = route.params;
+type RootStackParamList = {
+  Notifications: undefined;
+  Transactions: undefined;
+  Transaction: {id: string};
+};
 
-  console.log('id', id);
+type TransactionScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'Notifications',
+  'Transactions'
+>;
+
+type TransactionScreenRouteProp = RouteProp<RootStackParamList, 'Transaction'>;
+
+type Props = {
+  navigation: TransactionScreenNavigationProp;
+  route: TransactionScreenRouteProp;
+};
+
+const TransactionScreen = ({navigation, route}: Props) => {
+  const {id} = route.params;
 
   const handleBack = () => {
     navigation.goBack();

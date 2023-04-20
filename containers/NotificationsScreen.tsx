@@ -1,4 +1,4 @@
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {
   Text,
@@ -19,13 +19,13 @@ type RootStackParamList = {
   Transaction: {id: string};
 };
 
-type HomeScreenNavigationProp = NativeStackNavigationProp<
+type NavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   'Transaction'
 >;
 
 type Props = {
-  navigation: HomeScreenNavigationProp;
+  navigation: NavigationProp;
 };
 
 const NotificationsScreen = ({navigation}: Props) => {
@@ -47,7 +47,9 @@ const NotificationsScreen = ({navigation}: Props) => {
         <Text style={styles.headerText}>Notifications screen</Text>
 
         {DATA.map(item => (
-          <TouchableOpacity onPress={() => handleNavigateTransaction(item.id)}>
+          <TouchableOpacity
+            key={item.id}
+            onPress={() => handleNavigateTransaction(item.id)}>
             {!item.notification_read && (
               <Text style={styles.bodyText}>
                 {`Unread notification - Transaction ID ${item.id}`}
