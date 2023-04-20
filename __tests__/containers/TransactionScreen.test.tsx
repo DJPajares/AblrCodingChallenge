@@ -11,7 +11,10 @@ const mockParams = {
   id: 'T100',
 };
 
-jest.mock('react-native-vector-icons/Ionicons', () => 'Ionicons');
+jest.mock(
+  'react-native-vector-icons/MaterialCommunityIcons',
+  () => 'MaterialCommunityIcons',
+);
 
 const renderComponent = () => {
   const component = render(

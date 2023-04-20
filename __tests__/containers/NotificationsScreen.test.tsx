@@ -8,7 +8,10 @@ const mockNavigation = {
   goBack: jest.fn(),
 };
 
-jest.mock('react-native-vector-icons/Ionicons', () => 'Ionicons');
+jest.mock(
+  'react-native-vector-icons/MaterialCommunityIcons',
+  () => 'MaterialCommunityIcons',
+);
 
 const renderComponent = () => {
   const component = render(<NotificationsScreen navigation={mockNavigation} />);

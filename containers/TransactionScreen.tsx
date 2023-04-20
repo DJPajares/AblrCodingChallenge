@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 type RootStackParamList = {
   Notifications: undefined;
@@ -39,9 +39,9 @@ const TransactionScreen = ({navigation, route}: Props) => {
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity style={styles.backButton} onPress={handleBack}>
-        <Ionicons
+        <MaterialCommunityIcons
+          name="arrow-left"
           testID="back-button"
-          name="arrow-back"
           size={20}
           color="white"
         />

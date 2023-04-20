@@ -7,8 +7,6 @@ const mockNavigation = {
   navigate: jest.fn(),
 };
 
-jest.mock('react-native-vector-icons/Ionicons', () => 'Ionicons');
-
 const renderComponent = () => {
   const component = render(<TransactionsScreen navigation={mockNavigation} />);
 
