@@ -8,12 +8,7 @@ import {
   View,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
-const DATA = [
-  {id: 'T100', notification_read: false},
-  {id: 'T200', notification_read: true},
-  {id: 'T300', notification_read: false},
-];
+import {transactions} from '../mockData/transactions';
 
 type RootStackParamList = {
   Transaction: {id: string};
@@ -46,7 +41,7 @@ const NotificationsScreen = ({navigation}: Props) => {
       <View style={styles.subContainer}>
         <Text style={styles.headerText}>Notifications screen</Text>
 
-        {DATA.map(item => (
+        {transactions.map(item => (
           <TouchableOpacity
             key={item.id}
             onPress={() => handleNavigateTransaction(item.id)}>
