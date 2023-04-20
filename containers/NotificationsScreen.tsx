@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {transactions} from '../mockData/transactions';
+import mockData from '../mockData/mockData.json';
 
 type RootStackParamList = {
   Transaction: {id: string};
@@ -24,6 +24,8 @@ type Props = {
 };
 
 const NotificationsScreen = ({navigation}: Props) => {
+  const data = mockData.transactions;
+
   const handleBack = () => {
     navigation.goBack();
   };
@@ -46,7 +48,7 @@ const NotificationsScreen = ({navigation}: Props) => {
       <View style={styles.subContainer}>
         <Text style={styles.headerText}>Notifications screen</Text>
 
-        {transactions.map(item => (
+        {data.map(item => (
           <TouchableOpacity
             key={item.id}
             onPress={() => handleNavigateTransaction(item.id)}>

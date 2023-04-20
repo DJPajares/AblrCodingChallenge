@@ -1,7 +1,7 @@
 import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {Text, SafeAreaView, StyleSheet, TouchableOpacity} from 'react-native';
-import {transactions} from '../mockData/transactions';
+import mockData from '../mockData/mockData.json';
 
 type RootStackParamList = {
   Transaction: {id: string};
@@ -17,6 +17,8 @@ type Props = {
 };
 
 const TransactionsScreen = ({navigation}: Props) => {
+  const data = mockData.transactions;
+
   const handleNavigateTransaction = (id: string) => {
     navigation.navigate('Transaction', {id});
   };
@@ -25,7 +27,7 @@ const TransactionsScreen = ({navigation}: Props) => {
     <SafeAreaView style={styles.container}>
       <Text style={styles.headerText}>Transactions screen</Text>
 
-      {transactions.map(item => (
+      {data.map(item => (
         <TouchableOpacity
           key={item.id}
           onPress={() => handleNavigateTransaction(item.id)}>
